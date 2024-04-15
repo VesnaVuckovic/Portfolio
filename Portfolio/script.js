@@ -22,10 +22,22 @@ document.addEventListener("DOMContentLoaded", function() {
 
 
 const radioButtons = document.querySelectorAll('input[type="radio"]');
-const carousel = document.querySelector('.skills-carousel');
+const carousel = document.querySelector('.skills-carousel, .projects-carousel');
 
 radioButtons.forEach((button, index) => {
     button.addEventListener('change', () => {
         carousel.style.setProperty('--position', index + 1);
     });
 });
+
+let currentPosition = 1;
+const maxPosition = 5;
+
+function moveCarousel() {
+    currentPosition++;
+    if (currentPosition > maxPosition) {
+        currentPosition = 1;
+    }
+    carousel.style.setProperty('--position', currentPosition);
+}
+setInterval(moveCarousel, 1000);

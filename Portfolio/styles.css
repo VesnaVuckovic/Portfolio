@@ -6,23 +6,27 @@
 body {
     margin: 0;
     padding: 0;
-    box-sizing: border-box;     
+    box-sizing: border-box;
+    background-color: white;
+}
+.wrapper{
+    width: 80%;
+    margin: auto;
+    background-color: lightgray;
 }
 
 .main-container {
     display: grid;
-    grid-template-columns: 1fr auto; 
+    grid-template-columns: 35% 40% 20%; 
     align-items: center; 
     gap: 20px;
-    height: 100vh;
-    background-image: url(./assets/Cover.jpg);
-    background-size:cover;
-    background-position: center;
-    background-repeat: no-repeat;
-    overflow: hidden;
+    height: 90vh;
+    margin: 20px;
+    padding-bottom: 20px;
 }
 .menu {
     padding: 20px;
+    grid-column: 1 / 2;
 }
 .menu nav ul {
     margin: 0;
@@ -36,37 +40,53 @@ body {
     padding: 80px;    
 }
 .menu nav ul li a {
-    color: whitesmoke;
+    color: white;
     text-decoration: none;
     transition: color 0.3s;
 }
 .menu nav ul li a:hover {
-    color: gray;
+    color: lightgray;
+}
+.main-image {
+    grid-column: 2 / 3;
+    height: 100%;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    overflow: hidden;
+    background-size: cover;
+    background-repeat: no-repeat;
+    background-position: center;
+    background-image: url('assets/Cover.jpg');
+}
+.content {
+    padding: 20px;
+    grid-column: 3 / 4;
 }
 .logo img {
     position: relative;
     width: 400px;
     height: auto;
     margin-bottom: 100px;
+    padding-left: 5px;
 }
 .intro {
     margin-top: 120px;
-    color: gray;
+    color: white;
 }
 .copyright {
-    margin-top: 70px;
-    color: gray;
+    margin-top: 90px;
+    color: white;
     font-weight: bold;
 }
 
 
 .section {
     display: flex;
-    justify-content: space-between;
-    align-items: center; 
-    box-sizing: border-box;
-    padding: 20px;
-    margin-bottom: 20px; 
+    text-align: center;    
+    align-items: center;
+    margin-top: 20px; 
+    padding-top: 20px;
 }
 .about-text {   
     flex: 1;
@@ -101,24 +121,27 @@ body {
     text-align: center;
 }
 .skills-carousel-container {
-    width: 50%;    
-    margin: 0;
+    position: relative;
+    width: 50%;
+    height: 300px;     
+    margin: 50px auto;
     justify-items: center;   
     display: grid;
     grid-template-rows: 100px 20px;
     grid-template-columns: 1fr 10px 10px 10px 10px 10px 1fr;
     align-items: center;
     justify-items: center;
-}
-.item img {
-    width: 100px;
-    height: 100px;    
+    border: 3px solid gray;
+    border-radius: 5%;
+    box-shadow: 0 0 10px rgba(0, 0, 0, 0.5);
+    background-color: white;
+    gap: 15px;
 }
 .skills-carousel{
     grid-row: 1 / 2;
     grid-column: 1 / 8;
     width: 100%;
-    height: 300px;
+    height: 350px;
     display: flex;
     align-items: center;
     justify-content: center;
@@ -128,22 +151,27 @@ body {
     --items: 5;
     --middle: 3;
     --position: 1;
-    pointer-events: none;
-    gap: 5px;
+    pointer-events: none;    
 }
-.item {    
-    border-radius: 20px;    
+.item {
+    display: flex;
     position: absolute;
-    width: 100px;
-    height: 100px;
+    margin-top: 140px;
+    width: fit-content;
+    height: auto;
     background-color: white;
     --r: calc(var(--position) - var(--offset));
     --abs: max(calc(var(--r) * -1), var(--r));
     transition: all 0.25s linear;
     transform: rotateY(calc(-10deg * var(--r)))
     translateX(calc(-300px * var(--r)));
-    z-index: calc((var(--position) - var(--abs)));
-    margin-right: 5px;
+    z-index: calc((var(--position) - var(--abs)));    
+}
+input{
+    position: absolute;
+    margin-top: 320px;    
+    width: 20px;
+    height: 20px;
 }
 .item:nth-of-type(1) {
     --offset: 1;
@@ -197,82 +225,85 @@ input:nth-of-type(5):checked ~ .skills-carousel {
 }
 
 
-
-
-
-/* Medijalni upit za mobilne ekrane */
-@media (max-width: 768px) {
-    .about-content {
-        padding: 10px; /* Manji padding za mobilne ekrane */
-    }
-
-    .about-image-container:before {
-        display: none; /* Sakrivanje prelamanja teksta za mobilne ekrane */
-    }
+.projects-carousel{
+    grid-row: 1 / 2;
+    grid-column: 1 / 8;
+    width: 100%;    
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    overflow: hidden;
+    transform-style: preserve-3d;
+    perspective: 600px;
+    --items: 5;
+    --middle: 3;
+    --position: 1;
+    pointer-events: none; 
+    gap: 30px;   
+}
+.project{
+    justify-content: center;
+    width: 100%;
+    height: 300px;
+    border: 3px solid gray;
+    border-radius: 5px;    
+    font-size: 1.5rem;
 }
 
 
 
 
+#contact {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    padding: 20px;
+    height: 100vh;
+}
+
+.contact-content {
+    flex: 1; 
+    padding: 20px;
+}
+
+.contact-image {
+    flex: 1; 
+    background-image: url('assets/Cover4.jpg');
+    background-size: cover;
+    background-position: center;
+}
 
 .contact-form {
-    margin-top: 40px;
+    margin-top: 20px;
 }
 
-.contact-form form {
-    display: flex;
-    flex-direction: column;
-    align-items: center;
+form {
+    display: grid;
+    grid-template-columns: 1fr;
+    gap: 10px;
 }
 
-.contact-form label {
-    font-size: 1.2em;
-    margin-bottom: 10px;
+label {
+    font-weight: bold;
 }
 
-.contact-form input,
-.contact-form textarea {
+input,
+textarea,
+button {
     width: 100%;
     padding: 10px;
-    margin-bottom: 20px;
+    box-sizing: border-box;
+    border: 1px solid #ccc;
 }
 
-.contact-form button {
-    padding: 10px 20px;
+button {
     background-color: #007bff;
     color: white;
     border: none;
     cursor: pointer;
-    transition: background-color 0.3s;
 }
 
-.contact-form button:hover {
+button:hover {
     background-color: #0056b3;
 }
 
-@media (max-width: 768px) {
-    .main-container {
-        grid-template-columns: 1fr; 
-    }
-    .menu {
-        padding: 10px;
-    }
-
-    .menu nav ul li {
-        padding: 10px;
-    }
-
-    .logo img {
-        width: 100%;
-        max-width: 300px;
-        margin-bottom: 10px;
-    }
-
-    .intro {
-        margin-top: 20px; 
-    }
-
-    .copyright {
-        margin-top: 20px;
-    }
-}
