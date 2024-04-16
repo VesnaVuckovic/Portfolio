@@ -10,75 +10,81 @@ body {
     background-color: white;
 }
 .wrapper{
-    width: 80%;
+    width: 50%;
     margin: auto;
-    background-color: lightgray;
+    background-color: beige;
 }
-
-.main-container {
+.cover{    
     display: grid;
-    grid-template-columns: 35% 40% 20%; 
-    align-items: center; 
+    grid-template-columns: 1fr 1fr;
+    grid-template-rows: 1fr 1fr;
+    margin: 20px;
     gap: 20px;
     height: 90vh;
-    margin: 20px;
-    padding-bottom: 20px;
+    padding: 20px;      
 }
+.cover-logo{    
+    grid-row: 1 / 2;
+    display: flex;
+    justify-content: center;
+    align-items: center;    
+    background-image: url('assets/logo/LogoB_transparent.png');  
+    background-position: center;
+    background-repeat: no-repeat; 
+    background-size: 500px auto;
+    border-radius: 8px;
+}
+.cover-text {
+    grid-row: 2 / 3;    
+    text-align: center;
+    justify-content: baseline;
+    
+    font-size: 1.2rem;
+    font-weight: bold;
+}
+.cover-image{    
+    grid-column: 2 / 3;
+    grid-row: 1 / span 2;    
+    margin-top: 70px;   
+    justify-content: center;
+    align-items: center;
+    background-image: url('assets/Cover.jpg');    
+    background-position: center;
+    background-repeat: no-repeat;
+    background-size: auto 750px;
+    overflow: hidden;
+    border-radius: 8px;
+}
+
+
+
+
+
+
 .menu {
-    padding: 20px;
-    grid-column: 1 / 2;
+    display: grid;
+    grid-template-columns: 25% 20% 20% 25%; 
 }
 .menu nav ul {
     margin: 0;
     padding: 0;
-    color: white;
+    color: black;
     font-size: large;
     font-weight: bold;
     list-style-type: none;    
 }
 .menu nav ul li {
-    padding: 80px;    
+    padding: 30px;    
 }
 .menu nav ul li a {
-    color: white;
+    color: black;
     text-decoration: none;
     transition: color 0.3s;
 }
 .menu nav ul li a:hover {
     color: lightgray;
 }
-.main-image {
-    grid-column: 2 / 3;
-    height: 100%;
-    display: flex;
-    justify-content: center;
-    align-items: center;
-    overflow: hidden;
-    background-size: cover;
-    background-repeat: no-repeat;
-    background-position: center;
-    background-image: url('assets/Cover.jpg');
-}
-.content {
-    padding: 20px;
-    grid-column: 3 / 4;
-}
-.logo img {
-    position: relative;
-    width: 400px;
-    height: auto;
-    margin-bottom: 100px;
-    padding-left: 5px;
-}
-.intro {
-    margin-top: 120px;
-    color: white;
-}
-.copyright {
-    margin-top: 90px;
-    color: white;
-    font-weight: bold;
-}
+
 
 
 .section {
