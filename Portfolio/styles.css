@@ -10,7 +10,7 @@ body {
     background-color: white;
 }
 .wrapper{
-    width: 50%;
+    width: 70%;
     margin: auto;
     background-color: beige;
 }
@@ -37,55 +37,76 @@ body {
 }
 .cover-text {
     grid-column: 1 / 2;
-    grid-row: 2 / 3; 
+    grid-row: 2 / 4; 
     text-align: center;
+    font-size: 1.5rem;
+    font-weight: bold;    
+    line-height: 8;    
+}
+.cover a {    
+    width: 100%;
+    color: black;
     font-size: 1.2rem;
     font-weight: bold;
-    align-self: end;
+    text-decoration: none;  
+}
+.cover  a:hover {
+    color: lightgray;
 }
 .cover-image{    
     grid-column: 2 / 3;
     grid-row: 1 / span 2;    
     margin-top: 70px;   
-    justify-content: center;
-    align-items: center;
     background-image: url('assets/Cover.jpg');    
-    background-position: center;
-    background-repeat: no-repeat;
-    background-size: auto 750px;
+    background-position:center;
+    background-repeat: no-repeat;    
+    width: 70%;
     overflow: hidden;
     border-radius: 8px;
 }
 
 
-
-
-
-
 .menu {
-    display: flex;    
-    margin-top: 20px; 
-    padding-top: 20px;
-    list-style: none;
     
+    margin-top: 5%;
+    margin-bottom: 5%;    
 }
-.menu li {
-    margin-bottom: 20px;    
+.menu nav ul li:nth-child(1) {    
+    padding-left: 30%;
 }
-li .about {
-    padding-right: 20px;
+.menu nav ul li:nth-child(2) {    
+    padding-left: 40%;
 }
-.menu li a {  
-    margin-right: 70;     
-    text-decoration: none;    
+.menu nav ul li:nth-child(3) {    
+    padding-left: 50%;
+}
+.menu nav ul li {    
+    list-style: none;    
+    margin-bottom: 20px; 
+    padding-bottom: 20px;
     color: black;
-    font-size: 18px;
-    font-weight: bold;  
-    transition: background-color 0.3s ease;
+    font-size: 1.2rem;
+    font-weight: bold;    
+    transition: color 0.3s ease;    
 }
-.menu a:hover {
+.menu a {    
+    
+    color: black;
+    font-size: 1.5rem;
+    font-weight: bold;
+    text-decoration: none;
+}
+.menu  a:hover {
     color: lightgray;
 }
+
+.about-text {   
+    margin: 0 auto;
+    padding: 20px;    
+    text-align: center;
+}
+
+
 
 
 
@@ -96,12 +117,7 @@ li .about {
     margin-top: 20px; 
     padding-top: 20px;
 }
-.about-text {   
-    flex: 1;
-    max-width: 50%;
-    padding: 40px;
-    text-align: center;
-}
+
 .about-image {
     flex: 1;
     max-width: 50%;
