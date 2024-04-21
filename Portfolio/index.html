@@ -5,6 +5,8 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>I'm a Developer</title>
     <link rel="stylesheet" href="styles.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/css/all.min.css">
+
 </head>
 <body>
 
@@ -17,59 +19,66 @@
         </div>
 
         <div class="menu">
-            <nav>
+            <div id="about" class="about-text">                
+                <ul class="about-text"> 
+                    <p class="about-text"><h1>About</h1></p>                  
+                    <p class="about-text">Born: <a href=https://g.co/kgs/KvU1cXQ>1973. in Niš, Serbia</a></p>
+                    <p class="about-text">Curent city:<a href=https://g.co/kgs/8heZqTY>Belgrade, Serbia</a></p>
+                    <p class="about-text">Education:<br>
+                        <a href=https://www.link-group.eu/portfolio/businessacademy>Cambridge Business Academy - Strategic and Operational Management</a><br>
+                        <a href=https://code.edu.rs>CODE Academy - Front-End Developer</a></p>
+                    <p class="about-text"><a href=https://rs.linkedin.com/in/vesna-vu%C4%8Dkovi%C4%87-44a58696>Work experience</a></p>       
+                </ul>
+            </div> 
+
+            <nav class="nav">
                 <ul>                    
                     <li class="skills">These are my <a href="#skills">SKILLS</a></li>
                     <li class="projects">These are my <a href="#projects">PROJECTS</a></li>
                     <li class="contact">You can <a href="#contact">CONTACT </a>me</li>
                 </ul>
-            </nav>
-        </div>  
-        
-        <div id="about" class="about-text">
-            <h2>About</h2>
-            <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit. Accusantium aliquam quos incidunt porro voluptate odio esse libero laboriosam. Porro ex enim harum accusantium ullam tempora magni debitis maiores quia ipsa!
-            Veniam sit adipisci reiciendis similique, voluptate magnam voluptas officiis natus dicta omnis error ab excepturi mollitia sapiente quidem? Perspiciatis distinctio ducimus dignissimos ut tempora dolor ad rem accusantium nobis asperiores.
-            Nulla cumque distinctio nesciunt saepe blanditiis, ipsum similique facilis? Praesentium, ducimus repellendus accusantium doloribus voluptatem harum sed officia, rerum magnam dolore consequuntur autem est, itaque excepturi. Repellat, id beatae. Aperiam!
-            Quibusdam quas nisi accusantium provident explicabo laborum minus ut. Modi ipsum voluptate fuga velit eum. Quo porro, non eum qui totam aspernatur maxime! Numquam eveniet, dolores error quae velit quos.
-            Adipisci ipsam dolorem eos ex exercitationem labore laudantium repudiandae molestiae dicta. Minus aliquid deserunt dolorum corrupti, quas quasi laudantium accusantium, nobis, reprehenderit magnam vero nesciunt amet dolore blanditiis molestias fuga?</p>
+            </nav>    
+            
+        </div> 
+
+        <div id="skills" class="section">
+            <div class="skills-carousel-container">            
+                <div class="skills-carousel">
+                    <div class="item"><img src="assets/icons/html5_1.svg"></div>
+                    <div class="item"><img src="assets/icons/css3.svg"></div>
+                    <div class="item"><img src="assets/icons/Javascript.svg"></div>
+                    <div class="item"><img src="assets/icons/React_1.svg"></div>                
+                </div>
+                <input type="radio" name="position"/>
+                <input type="radio" name="position"/>
+                <input type="radio" name="position" checked/>
+                <input type="radio" name="position"/>               
+            </div> 
         </div>
-    
-             
 
-    </div>
-    
-    
-
-    <div id="skills" class="section">
-        <div class="skills-carousel-container">            
-            <div class="skills-carousel">
-                <div class="item"><img src="assets/icons/html5.svg"></div>
-                <div class="item"><img src="assets/icons/css3.svg"></div>
-                <div class="item"><img src="assets/icons/Javascript.svg"></div>
-                <div class="item"><img src="assets/icons/React.svg"></div>
-                <div class="item"><img src="assets/icons/html5.svg"></div>
+        <div id="contact" class="section">
+            <div><h3>Don't hesitate to contact me.</h3></div>
+            <div class="contact-form">
+                <form>
+                    <label for="name">Name:</label>
+                    <input type="text" id="name" name="name" required placeholder="Your name..">
+                    <label for="email">Email:</label>
+                    <input type="text" id="email" name="email" required placeholder="Your email..">
+                    <label for="message">Message:</label>
+                    <textarea id="message" name="message" required placeholder="Write something.."></textarea>
+                    <button type="submit">Send Message</button>
+                </form>            
             </div>
-            <input type="radio" name="position"/>
-            <input type="radio" name="position"/>
-            <input type="radio" name="position" checked/>
-            <input type="radio" name="position"/>
-            <input type="radio" name="position"/>      
-        </div>
-    
-        <div class="skill-text">
-            <h2>Skills</h2>
-            <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit. Accusantium aliquam quos incidunt porro voluptate odio esse libero laboriosam. Porro ex enim harum accusantium ullam tempora magni debitis maiores quia ipsa!
-                Veniam sit adipisci reiciendis similique, voluptate magnam voluptas officiis natus dicta omnis error ab excepturi mollitia sapiente quidem? Perspiciatis distinctio ducimus dignissimos ut tempora dolor ad rem accusantium nobis asperiores.
-                Nulla cumque distinctio nesciunt saepe blanditiis, ipsum similique facilis? Praesentium, ducimus repellendus accusantium doloribus voluptatem harum sed officia, rerum magnam dolore consequuntur autem est, itaque excepturi. Repellat, id beatae. Aperiam!
-                Quibusdam quas nisi accusantium provident explicabo laborum minus ut. Modi ipsum voluptate fuga velit eum. Quo porro, non eum qui totam aspernatur maxime! Numquam eveniet, dolores error quae velit quos.
-                Adipisci ipsam dolorem eos ex exercitationem labore laudantium repudiandae molestiae dicta. Minus aliquid deserunt dolorum corrupti, quas quasi laudantium accusantium, nobis, reprehenderit magnam vero nesciunt amet dolore blanditiis molestias fuga?
-            </p>
-        </div>
+        </div>            
+
     </div>
     
     
-    <div id="projects" class="section"> 
+
+  
+    
+    
+    <!-- <div id="projects" class="section"> 
         <div><h2>Projects</h2>     
         <div class="projects-carousel">
             <div class="project"><img src="assets/icons/React.svg">Blog</div>
@@ -81,22 +90,9 @@
     </div>  
     </div>
 
-    <div id="contact" class="section">
-        <div><h2>Contact</h2>
-        <h3>Don't hesitate to contact me.</h3>
-        <div class="contact-form">
-            <form>
-                <label for="name">Name:</label>
-                <input type="text" id="name" name="name" required>
-                <label for="email">Email:</label>
-                <input type="email" id="email" name="email" required>
-                <label for="message">Message:</label>
-                <textarea id="message" name="message" required></textarea>
-                <button type="submit">Send Message</button>
-            </form>            
-        </div>
+    
         <div class="contact-image"></div>
-    </div>   
+    </div>    -->
     
     <script src="script.js"></script>
 

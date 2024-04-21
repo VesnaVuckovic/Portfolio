@@ -31,7 +31,7 @@ radioButtons.forEach((button, index) => {
 });
 
 let currentPosition = 1;
-const maxPosition = 5;
+const maxPosition = 4;
 
 function moveCarousel() {
     currentPosition++;
