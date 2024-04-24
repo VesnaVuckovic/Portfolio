@@ -1,0 +1,311 @@
+@font-face {
+    font-family: "Roboto";
+    src: url(./assets/fonts/Roboto-Regular.ttf);
+}
+  
+body {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    background-color: white;
+}
+.wrapper{
+    width: 70%;
+    margin: auto;
+    background-color: beige;
+}
+
+.cover{    
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    grid-template-rows: 1fr 1fr;
+    margin: 20px;
+    gap: 20px;
+    height: 90vh;
+    padding: 20px;      
+}
+.cover-logo{    
+    grid-row: 1 / 2;
+    display: flex;
+    justify-content: center;
+    align-items: center;    
+    background-image: url('assets/logo/LogoB_transparent.png');  
+    background-position: center;
+    background-repeat: no-repeat; 
+    background-size: 500px auto;
+    border-radius: 8px;
+}
+.cover-text {
+    grid-column: 1 / 2;
+    grid-row: 2 / 4; 
+    text-align: center;
+    font-size: 1.5rem;
+    font-weight: bold;    
+    line-height: 8;    
+}
+.cover a {    
+    width: 100%;
+    color: black;
+    font-size: 1.2rem;
+    font-weight: bold;
+    text-decoration: none;  
+}
+.cover  a:hover {
+    color: lightgray;
+}
+.cover-image{    
+    grid-column: 2 / 3;
+    grid-row: 1 / span 2;    
+    margin-top: 70px;   
+    background-image: url('assets/Cover.jpg');    
+    background-position:center;
+    background-repeat: no-repeat;    
+    width: 70%;
+    overflow: hidden;
+    border-radius: 8px;
+}
+
+.menu {    
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    grid-template-rows: 1fr 1fr;    
+    gap: 20px;    
+    padding: 20px; 
+}
+.about-text p {     
+    color: black;   
+    list-style: none;
+    text-decoration: none; 
+    font-size: 1.2rem;
+}
+.about-text ul a {
+    color: black;   
+    list-style: none;
+    text-decoration: none;
+    font-size: 1rem;   
+}
+.menu{
+    max-width: 800px; 
+    margin: 0 auto; 
+    padding: 20px;    
+    height: 40vh;   
+    border-radius: 5%;
+    box-shadow: 0 0 10px rgba(0, 0, 0, 0.5);    
+}
+.menu nav ul li { 
+    grid-column: 2 / 3;
+    grid-row: 3 / 4;     
+    list-style: none;    
+    margin-top: 30px; 
+    padding-left: 50px;
+    padding-bottom: 20px;   
+    color: black;
+    font-size: 1.2rem;
+    font-weight: bold;    
+    transition: color 0.3s ease;    
+}
+.menu a {      
+    color: black;
+    font-size: 1.5rem;
+    font-weight: bold;
+    text-decoration: none;
+}
+.menu  a:hover {
+    color: lightgray;
+}
+
+.skills-carousel-container {
+    position: relative;
+    max-width: 800px;    
+    padding: 20px;    
+    height: 40vh;      
+    margin: 50px auto;
+    justify-items: center;   
+    display: grid;
+    grid-template-rows: 100px 20px;
+    grid-template-columns: 1fr 10px 10px 10px 10px 10px 1fr;
+    align-items: center;
+    justify-items: center; 
+    border-radius: 5%;
+    box-shadow: 0 0 10px rgba(0, 0, 0, 0.5);
+    background-color: white;
+    gap: 15px;
+}
+.skills-carousel{
+    grid-row: 1 / 2;
+    grid-column: 1 / 8;
+    width: 100%;
+    height: 350px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    overflow: hidden;
+    transform-style: preserve-3d;
+    perspective: 600px;
+    --items: 4;
+    --middle: 2;
+    --position: 1;
+    pointer-events: none;    
+}
+.item {
+    display: flex;
+    position: absolute;
+    margin-top: 140px;
+    width: fit-content;
+    height: auto;    
+    --r: calc(var(--position) - var(--offset));
+    --abs: max(calc(var(--r) * -1), var(--r));
+    transition: all 0.25s linear;
+    transform: rotateY(calc(-10deg * var(--r)))
+    translateX(calc(-300px * var(--r)));
+    z-index: calc((var(--position) - var(--abs)));    
+}
+.skills-carousel-container input[type="radio"]{    
+    position: absolute;
+    top: 150px; 
+    width: 20px;
+    height: 20px;
+}
+.item:nth-of-type(1) {
+    --offset: 1;
+}
+.item:nth-of-type(2) {
+    --offset: 2;
+}
+.item:nth-of-type(3) {
+    --offset: 3;
+}
+.item:nth-of-type(4) {
+    --offset: 4;
+}
+input:nth-of-type(1) {
+    grid-column: 2 / 3;
+    grid-row: 2 / 3;
+}
+input:nth-of-type(1):checked ~ .skills-carousel {
+    --position: 1;
+}
+input:nth-of-type(2) {
+    grid-column: 3 / 4;
+    grid-row: 2 / 3;
+}
+input:nth-of-type(2):checked ~ .skills-carousel {
+    --position: 2;
+}
+input:nth-of-type(3) {
+    grid-column: 4 /5;
+    grid-row: 2 / 3;
+}
+input:nth-of-type(3):checked ~ .skills-carousel {
+    --position: 3;
+}
+input:nth-of-type(4) {
+    grid-column: 5 / 6;
+    grid-row: 2 / 3;
+}
+input:nth-of-type(4):checked ~ .skills-carousel {
+    --position: 4;
+}
+.skills-carousel-container input[type="radio"]:checked {
+    background-color: gray;
+}
+
+
+#contact {
+    max-width: 800px; 
+    margin: 0 auto; 
+    padding: 20px;    
+    height: 50vh;   
+    border-radius: 5%;
+    box-shadow: 0 0 10px rgba(0, 0, 0, 0.5);
+}
+.contact-form label {
+    display: block;     
+    margin-bottom: 8px; 
+    font-weight: bold; 
+}
+.contact-form input[type="text"],
+.contact-form textarea {
+    width: 100%; 
+    padding: 10px; 
+    margin-bottom: 16px;    
+    border: 1px solid #ccc; 
+    border-radius: 3px; 
+    box-sizing: border-box; 
+}
+.contact-form textarea {
+    resize: vertical; 
+    min-height: 100px; 
+}
+.contact-form button {
+    background-color: gray; 
+    color: #fff; 
+    padding: 10px 20px; 
+    border: none; 
+    border-radius: 3px; 
+    cursor: pointer; 
+}
+.contact-form button:hover {
+    background-color: lightgray; 
+}
+
+.footer{
+    display: flex;
+    font-size: 1.2rem;
+    font-weight: bold;
+    justify-content: center;
+    align-items: center;   
+    padding: 20px 20px;
+}
+
+#topBtn {
+    display: none; 
+    position: fixed; 
+    bottom: 20px;
+    right: 300px;
+    z-index: 99; 
+    border: none;
+    outline: none;
+    background-color: beige;    
+    cursor: pointer;
+    padding: 15px;
+    border: 1px solid black;
+    border-radius: 50%;
+    font-size: 18px;
+    font-weight: 500;
+    transition: background-color 0.3s ease;
+}
+#topBtn:hover {
+    background-color: beige;
+}
+
+/* .projects-carousel{
+    grid-row: 1 / 2;
+    grid-column: 1 / 8;
+    width: 100%;    
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    overflow: hidden;
+    transform-style: preserve-3d;
+    perspective: 600px;
+    --items: 5;
+    --middle: 3;
+    --position: 1;
+    pointer-events: none; 
+    gap: 30px;   
+}
+.project{
+    justify-content: center;
+    width: 100%;
+    height: 300px;
+    border: 3px solid gray;
+    border-radius: 5px;    
+    font-size: 1.5rem;
+} */
+
+
+
+
+
+
